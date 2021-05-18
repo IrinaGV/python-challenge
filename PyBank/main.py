@@ -47,11 +47,11 @@ with open(file,newline='') as csvfile:
     print('Greatest Decrease in Profits: ',date[(change.index(min(change)))+1],'$({})'.format(change_min))
     
     output_file = os.path.join("analysis","analysis.txt")
-    with open("analysis.txt", "w") as output_file:
+    with open(output_file, "w") as text_file:
     
-      output_file.write("Financial Analysis" + "\n")
-      output_file.write("----------------------------" + "\n") 
-      output_file.write("Total Months: " +str(totalrows) + "\n" )
-      output_file.write("Total: " + str(total) +"\n"  )
-      output_file.write("Greatest Increase in Profits: " +str(date[(change.index(max(change)))+1]) +" "+str('$({})'.format(change_max))+"\n")
-      output_file.write("Greatest Decrease in Profits: " +str(date[(change.index(min(change)))+1]) +" "+str('$({})'.format(change_min))+"\n")
+      text_file.write("Financial Analysis" + "\n")
+      text_file.write("----------------------------" + "\n") 
+      text_file.write("Total Months: " +str(totalrows) + "\n" )
+      text_file.write("Total: " + str(total) +"\n"  )
+      text_file.write("Greatest Increase in Profits: " +str(date[(change.index(max(change)))+1]) +" "+str('$({})'.format(change_max))+"\n")
+      text_file.write("Greatest Decrease in Profits: " +str(date[(change.index(min(change)))+1]) +" "+str('$({})'.format(change_min))+"\n")
