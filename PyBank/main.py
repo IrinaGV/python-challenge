@@ -1,18 +1,16 @@
 import os
 import csv
 import collections
-#import subprocess
+
 
 file=os.path.join("Resources","budget_data.csv")
-#"C:\\","users","igasnikova","Desktop","python-challenge",
-#"PyBank","Resources","budget_data.csv")
 profit_losses =[]
 date=[]
 total=0
 totalrows=0
 data = []
 count = collections.Counter()
-#change = []
+
 with open(file,newline='') as csvfile:
     csvreader = csv.reader(csvfile,delimiter=",")
     header = next(csvreader)
@@ -24,6 +22,7 @@ with open(file,newline='') as csvfile:
      total += int(row[1])
           
      profit_losses.append(row[1])
+     
      profit_losses = list(map(int, profit_losses))
      date.append(row[0])
     print('Financial Analysis')
@@ -47,9 +46,9 @@ with open(file,newline='') as csvfile:
     print('Greatest Increase in Profits: ',date[(change.index(max(change)))+1],'$({})'.format(change_max))    
     print('Greatest Decrease in Profits: ',date[(change.index(min(change)))+1],'$({})'.format(change_min))
     
-    output_file = os.path.join("/../analysis","analysis.txt")
+    output_file = os.path.join("analysis","analysis.txt")
     with open("analysis.txt", "w") as output_file:
-      #subprocess.check_call(["python", "main.py"], stdout=f)
+    
       output_file.write("Financial Analysis" + "\n")
       output_file.write("----------------------------" + "\n") 
       output_file.write("Total Months: " +str(totalrows) + "\n" )
